@@ -19,6 +19,10 @@ RCT_REMAP_METHOD(show,
 
     BTDropInRequest *request = [[BTDropInRequest alloc] init];
 
+    request.vaultManager = [options[@"vaultManager"] boolValue];
+    request.cardDisabled = [options[@"disableCard"] boolValue];
+    request.paypalDisabled = [options[@"disablePayPal"] boolValue];
+
     NSDictionary* threeDSecureOptions = options[@"threeDSecure"];
     if (threeDSecureOptions) {
         NSNumber* threeDSecureAmount = threeDSecureOptions[@"amount"];
