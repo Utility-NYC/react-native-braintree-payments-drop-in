@@ -1,17 +1,20 @@
 type ShowOptions = {|
   clientToken: string,
   threeDSecure?: {|
-    amount: number,
+    amount: number
   |},
+  vaultManager: boolean,
+  disableCard: boolean,
+  disablePayPal: boolean
 |};
 
 type ShowResult = {|
   nonce: string,
   description: string,
   type: string,
-  isDefault: boolean,
+  isDefault: boolean
 |};
 
 declare module.exports: {
-  show: (options: ShowOptions) => Promise<ShowResult>,
+  show: (options: ShowOptions) => Promise<ShowResult>
 };
